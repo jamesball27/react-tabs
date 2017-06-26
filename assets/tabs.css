@@ -1,0 +1,81 @@
+/* RESET */
+html, body, div, ul, li, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+img {
+  height: ;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TABS WRAPPER */
+.tabs-wrapper {
+  width: 40em;
+  height: 30em;
+  margin: 5em;
+  border: 1px solid #ccc;
+  font-family: "Lato", sans-serif;
+}
+
+/* TABS HEADER */
+.tabs-header {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.tabs-header li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #ccc;
+  color: #313537;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+.tabs-header li span {
+  display: block;
+  width: 10em;
+
+  text-transform: uppercase;
+  text-align: center;
+  font-size: .7em;
+  font-weight: bold;
+  letter-spacing: .25em;
+}
+
+.tabs-header li:last-child {
+  border-right: none;
+}
+
+/* TAB CONTENT */
+.tab-content {
+  width: 100%;
+}

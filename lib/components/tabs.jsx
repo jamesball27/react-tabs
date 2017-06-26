@@ -9,7 +9,7 @@ class Tabs extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="tabs-wrapper">
         <TabsHeader
           tabs={ this.props.tabs }
           selectedTab={ this.props.selectedTab }

@@ -16,14 +16,14 @@ class TabsHeader extends React.Component {
 
   render() {
     return(
-      <ul>
+      <ul className="tabs-header">
         {
           this.props.tabs.map(tab => (
             <li
               key={ tab.id }
               onClick={ this.handleClick(tab.id) }
             >
-              { tab.header }
+              <span>{ tab.header }</span>
             </li>
           ))
         }
