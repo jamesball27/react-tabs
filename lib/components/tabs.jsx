@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Tabs extends React.Component {
 
@@ -9,4 +10,8 @@ class Tabs extends React.Component {
   }
 }
 
-export default Tabs;
+const mapStateToProps = ({ tabs }) => ({
+  tabs
+});
+
+export default connect(mapStateToProps)(Tabs);
