@@ -1,5 +1,5 @@
 /* RESET */
-html, body, div, ul, li, p {
+html, body, div, ul, li, p, i {
   margin: 0;
   padding: 0;
   border: 0;
@@ -39,14 +39,14 @@ html, body, #root {
   width: 40em;
   height: 30em;
   margin: 5em;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   font-family: "Lato", sans-serif;
 }
 
 /* TABS HEADER */
 .tabs-header {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -54,16 +54,17 @@ html, body, #root {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   color: #313537;
   padding: 1em 2em;
   cursor: pointer;
+  background: #efefef;
 }
 
 .tabs-header li span {
   display: block;
   width: 10em;
-
   text-transform: uppercase;
   text-align: center;
   font-size: .7em;
@@ -74,6 +75,47 @@ html, body, #root {
 .tabs-header li:last-child {
   border-right: none;
 }
+
+.tabs-header li.selected {
+  background: white;
+  color: #747a7e;
+  border-bottom: none;
+}
+
+.tabs-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.tabs-header-wrapper:hover .arrow {
+  opacity: 0.5;
+}
+
+.arrow {
+  position: absolute;
+  opacity: 0;
+  font-size: 1.5em;
+  color: #ccc;
+  background: black;
+  padding: .3em;
+  border-radius: .1em;
+  cursor: pointer;
+  transition: opacity 0.25s;
+}
+
+.arrow.left {
+  left: 0;
+  margin-left: 0.5em;
+}
+
+.arrow.right {
+  right: 0;
+  margin-right: 0.5em;
+}
+
 
 /* TAB CONTENT */
 .tab-content {
