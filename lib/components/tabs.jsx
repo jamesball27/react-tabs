@@ -4,6 +4,7 @@ import { receiveSelectedTab } from '../actions/tab_actions';
 import { arrayAllTabs } from '../reducers/selectors';
 import TabsHeader from './tabs_header';
 import TabContent from './tab_content';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 class Tabs extends React.Component {
 
@@ -15,10 +16,20 @@ class Tabs extends React.Component {
           selectedTab={ this.props.selectedTab }
           receiveSelectedTab={ this.props.receiveSelectedTab }
         />
-        <TabContent
-          tabs={ this.props.tabs }
-          selectedTab={ this.props.selectedTab }
-        />
+        <CSSTransitionGroup
+          transitionName="tab-content"
+          transitionAppear={ true }
+          transitionAppearTimeout={ 300 }
+          transitionEnter={ true }
+          transitionEnterTimeout={ 300 }
+          transitionLeave={ false }
+          key={ this.props.selectedTab }
+        >
+          <TabContent
+            tabs={ this.props.tabs }
+            selectedTab={ this.props.selectedTab }
+          />
+        </CSSTransitionGroup>
       </div>
     );
   }

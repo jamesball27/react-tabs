@@ -60,6 +60,11 @@ html, body, #root {
   color: #313537;
   padding: 1em 2em;
   cursor: pointer;
+  background: #f5f5f5;
+  transition: background .25s;
+}
+
+.tabs-header li:hover {
   background: #efefef;
 }
 
@@ -140,4 +145,13 @@ html, body, #root {
 
 .tab-content img {
   box-sizing: border-box;
+}
+
+.tab-content-appear {
+  opacity: 0.01;
+}
+
+.tab-content-appear.tab-content-appear-active {
+  opacity: 1;
+  transition: opacity .25s ease-in;
 }
