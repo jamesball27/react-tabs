@@ -36,7 +36,7 @@ html, body, #root {
 
 /* TABS WRAPPER */
 .tabs-wrapper {
-  width: 75%;
+  width: 50%;
   height: 50%;
   margin: 5em;
   border: 1px solid #ddd;
