@@ -36,9 +36,10 @@ html, body, #root {
 
 /* TABS WRAPPER */
 .tabs-wrapper {
+  position: absolute;
+  left: 25%;
+  top: 25%;
   width: 50%;
-  height: 50%;
-  margin: 5em;
   border: 1px solid #ddd;
   font-family: "Lato", sans-serif;
 }
@@ -120,14 +121,20 @@ html, body, #root {
 /* TAB CONTENT */
 .tab-content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  box-sizing: border-box;
 }
 
-/*@media (max-width: 750px) {
-  .tabs-header {
-    overflow-x: scroll;
-  }
+.tab-content p {
+  font-family: "Merriweather", serif;
+  font-size: 1em;
+  padding-bottom: 2em;
+}
 
-  .arrow {
-    display: none;
-  }
-}*/
+.tab-content img {
+  box-sizing: border-box;
+}

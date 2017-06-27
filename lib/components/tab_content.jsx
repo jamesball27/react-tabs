@@ -1,19 +1,29 @@
 import React from 'react';
 
-class TabContent extends React.Component {
+const TabContent = props => {
 
-  render() {
-    const { tabs, selectedTab } = this.props;
-    const content = tabs[selectedTab].content;
-    const imgUrl = tabs[selectedTab].img;
+  const { tabs, selectedTab } = props;
+  const content = tabs[selectedTab].content;
+  const imgUrl = tabs[selectedTab].img;
 
-    return(
-      <div className="tab-content">
-        <p>{ content }</p>
-        <img src={ imgUrl } />
-      </div>
-    );
-  }
-}
+  const renderContent = () => {
+    if (content) {
+      return <p>{ content }</p>;
+    }
+  };
+
+  const renderImg = () => {
+    if (imgUrl) {
+      return <img src={ imgUrl } />;
+    }
+  };
+
+  return(
+    <div className="tab-content">
+      { renderContent() }
+      { renderImg() }
+    </div>
+  );
+};
 
 export default TabContent;

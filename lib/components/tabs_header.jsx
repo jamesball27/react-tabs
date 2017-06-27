@@ -73,7 +73,6 @@ class TabsHeader extends React.Component {
         this.setState({ pageNumber });
       } else {
         scroll();
-        console.log(this.ul.scrollLeft);
       }
     }, 1);
   }
