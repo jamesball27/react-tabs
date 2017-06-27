@@ -23,27 +23,33 @@ class TabsHeader extends React.Component {
   }
 
   scrollLeft() {
-    const interval2 = setInterval(() => {
-      if (this.ul.scrollLeft === 0) {
-        clearInterval(interval2);
-      } else {
-        this.ul.scrollLeft -= 10;
-      }
-    }, 10);
-
-    this.setState({ scrollPosition: 'left' });
+    this.setScrollInterval('left');
   }
 
   scrollRight() {
-    const interval = setInterval(() => {
-      if (this.ul.scrollLeft === 230) {
-        clearInterval(interval);
-      } else {
-        this.ul.scrollLeft += 10;
-      }
-    }, 10);
+    this.setScrollInterval('right');
+  }
 
-    this.setState({ scrollPosition: 'right' });
+  // this only works if there are two 'pages' of tabs
+  // if there are more than two pages it will skip any in between
+  setScrollInterval(direction) {
+    let bound, scroll;
+    if (direction === 'right') {
+      bound = this.ul.scrollWidth - this.ul.offsetWidth;
+      scroll = () => { this.ul.scrollLeft += 4; };
+    } else {
+      bound = 0;
+      scroll = () => { this.ul.scrollLeft -= 4; };
+    }
+
+    const interval = setInterval(() => {
+      if (this.ul.scrollLeft === bound) {
+        clearInterval(interval);
+        this.setState({ scrollPosition: direction });
+      } else {
+        scroll();
+      }
+    }, 1);
   }
 
   render() {

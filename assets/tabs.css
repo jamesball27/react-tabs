@@ -36,8 +36,8 @@ html, body, #root {
 
 /* TABS WRAPPER */
 .tabs-wrapper {
-  width: 40em;
-  height: 30em;
+  width: 75%;
+  height: 50%;
   margin: 5em;
   border: 1px solid #ddd;
   font-family: "Lato", sans-serif;
@@ -121,3 +121,13 @@ html, body, #root {
 .tab-content {
   width: 100%;
 }
+
+/*@media (max-width: 750px) {
+  .tabs-header {
+    overflow-x: scroll;
+  }
+
+  .arrow {
+    display: none;
+  }
+}*/
