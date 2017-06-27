@@ -79,13 +79,13 @@ class TabsHeader extends React.Component {
 
   renderRightArrow() {
     if (this.state.pageNumber < this.state.pageCount) {
-      return <span onClick={ this.scrollRight } className="arrow right">❱</span>;
+      return <span onClick={ this.scrollRight } className="arrow right">›</span>;
     }
   }
 
   renderLeftArrow() {
     if (this.state.pageNumber > 1) {
-      return <span onClick={ this.scrollLeft } className="arrow left">❰</span>;
+      return <span onClick={ this.scrollLeft } className="arrow left">‹</span>;
     }
   }
 
