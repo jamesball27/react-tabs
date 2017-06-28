@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import modalStyles from './modal_styles';
 
 class TabContent extends React.Component {
   constructor(props) {
@@ -37,35 +38,6 @@ class TabContent extends React.Component {
   }
 
   render() {
-    const styles = {
-      overlay : {
-        position       : 'fixed',
-        top            : 0,
-        left           : 0,
-        right          : 0,
-        bottom         : 0,
-        backgroundColor: '#fff',
-        width          : '100%',
-        border         : 'none',
-      },
-      content : {
-        position      : 'absolute',
-        top           : '0',
-        left          : '0',
-        right         : '0',
-        bottom        : '0',
-        background    : '#fff',
-        overflow      : 'auto',
-        outline       : '5em',
-        display       : 'flex',
-        justifyContent: 'center',
-        alignItems    : 'center',
-        border        : 'none',
-        cursor        : 'zoom-out',
-        padding       : '10em'
-      }
-    };
-
     const { tabs, selectedTab } = this.props;
     const content = tabs[selectedTab].content;
     const imgUrl = tabs[selectedTab].img;
@@ -78,7 +50,7 @@ class TabContent extends React.Component {
           isOpen={ this.state.modalIsOpen }
           onRequestClose={ this.closeModal }
           contentLabel="Image Modal"
-          style={ styles }
+          style={ modalStyles }
         >
           { this.renderImg(imgUrl) }
         </Modal>

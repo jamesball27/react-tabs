@@ -4,10 +4,7 @@ class TabsHeader extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      pageNumber: 1,
-      pageCount: 1,
-    };
+    this.state = { pageNumber: 1, pageCount: 1 };
 
     this.handleClick = this.handleClick.bind(this);
     this.scrollLeft = this.scrollLeft.bind(this);
@@ -53,8 +50,8 @@ class TabsHeader extends React.Component {
 
   setScrollInterval(direction) {
     const { scrollAmount, scrollMax } = this.state;
-
     let bound, scroll, pageNumber;
+
     if (direction === 'right') {
       bound = this.ul.scrollLeft + scrollAmount;
       if (bound > scrollMax) { bound = scrollMax; }
@@ -93,7 +90,7 @@ class TabsHeader extends React.Component {
     return(
       <div className="tabs-header-wrapper">
         { this.renderLeftArrow() }
-        <ul className="tabs-header" ref={ ul => {this.ul = ul;}} id="ul">
+        <ul className="tabs-header" ref={ ul => { this.ul = ul; } } id="ul">
           {
             this.props.tabs.map(tab => (
               <li
